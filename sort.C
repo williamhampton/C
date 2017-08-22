@@ -17,7 +17,7 @@ int request(){
   int num = atoi(number);
   array[length-1] = num;
   length +=1;
-  while(atoi(number)!= errno & length < 64){
+  while(length < 64){
     printf("\nInput a number: ");
     char number[64];
     scanf("%s", number);
@@ -37,7 +37,7 @@ int request(){
         }
       }
       printf("The result is: ");
-      for(int i = 0; i< length-1; i++){
+      for(int i = 0; i< length; i++){
         printf("%d ",array[i]);
       }
       printf("\n");
