@@ -16,18 +16,24 @@ int main(){
   int num =  atoi(number);
   array[length] = num;
   length = length +1;
-  while(atoi(number)!= errno & length<64){
+  while(length<64){
     printf("\nInput another Number: ");
     scanf("%s", number);
-    int num =  atoi(number);
-    array[length] = num;
-    length = length +1;
+    if (atoi(number) != errno){
+      int num =  atoi(number);
+      array[length] = num;
+      length = length +1;
+    }
+    if (atoi(number)== errno){
+      int total = 0;
+      for(int i = 0; i<=length-1; i++){
+        total = total +array[i];
+      }
+      total = total/length;
+      printf("\nYour average is: %d\n",total);
+      return 0;
+    }
+
+
   }
-  int total = 0;
-  for(int i = 0; i<length-1; i++){
-    total = total +array[i];
-  }
-  length = length +1;
-  total = total/length;
-  printf("%d",total);
 }
