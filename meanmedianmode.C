@@ -19,28 +19,24 @@ int main(){
     int median = array[len2];
     printf("Mean: %d\n", mean);
     printf("Median: %d\n",median);
-    int array2[16];
-    int counter = 0;
-    int q;
-    for (q = 0; q< len; q++){
-      if (array[i] == array[i+1]){
-        array2[counter] = array[i];
-        counter +=1;
+    int number = array[0];
+    int mode = number;
+    int count = 1;
+    int countMode = 1;
+
+    for (int i=1; i<truelen; i++){
+      if (array[i] == number){
+         ++count;
       }
+      else{
+        if (count > countMode){
+          countMode = count;
+          mode = number;
+        }
+      count = 1;
+      number = array[i];
     }
-    int array3[counter];
-    int finalcounter = 0;
-    for (q= 0; q<counter; q++){
-      if( array2[q] == array2[q+1]){
-        array3[finalcounter] = array2[q];
-        finalcounter += 1;
-      }
-    }
-    for (i =0; i< finalcounter; i++){
-      printf("%d ", array3[finalcounter]);
-
-    }
-
-
+  }
+    printf("Mode: %d", mode);
     return 0;
 }
