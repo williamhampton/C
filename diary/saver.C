@@ -13,7 +13,7 @@ int main () {
   struct tm* tm_info;
   time(&timer);
   tm_info = localtime(&timer);
-  strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+  strftime(buffer, 26, "\n%Y-%m-%d %H:%M:%S", tm_info);
   ofstream tempfile;
   tempfile.open ("savefile.txt", ios::app);
   tempfile << buffer;
